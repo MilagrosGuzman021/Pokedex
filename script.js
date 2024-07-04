@@ -57,10 +57,11 @@ const showPokemon = async(page=1)=>{
     try {
         
         const pokemons = await getPokemons(page);
-        pokemons.forEach(({base_experience, height, id, name, weight}) => {
+        pokemons.forEach(({base_experience, height, id, name, weight, sprites}) => {
             html+= `
                         <article class="pokemon">
                                 <h2>${name.toUpperCase()}</h2>
+                                 <img src=${sprites["front_default"]} alt="">
                                 <ul>
                                     <li>N° ID: ${id}</li>
                                     <li>Altura: ${height}</li>
